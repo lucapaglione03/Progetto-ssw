@@ -1,0 +1,16 @@
+<h1>Biblioteca online</h1>
+
+<button (click)="AttivaView('ricerca')">Cerca un volume</button><br />
+<button (click)="AttivaView('inserimento')">Inserisci un nuovo volume</button>
+
+<ricerca *ngIf='view==="ricerca"'
+[view]='view'
+(cambioView)="HandleCambioView()" 
+[archivio]='archivio'>
+</ricerca>
+
+<inserimento *ngIf='view==="inserimento"'
+[view]='view' 
+(cambioView)="HandleCambioView()"
+[archivio] = 'archivio'>
+</inserimento>

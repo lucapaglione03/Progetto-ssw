@@ -5,3 +5,7 @@
   <label>Titolo: </label> <input type="text" placeholder="es. Divina Commedia" #titolo /><br>
   <label>Posizione: </label> <input type="text" placeholder="es. S1P1" #posizione />
 </div>
+
+<button (click)="Inserisci(autore.value, titolo.value, posizione.value)">Inserisci</button>
+
+<button (click)="Clean()">Esci</button>
