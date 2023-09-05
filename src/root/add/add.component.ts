@@ -3,18 +3,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Archivio } from '../archivio';
 import { ArchivioService } from '../archivio.service';
 import { Volume } from '../volume';
-import { DescrizioneComponent } from './descrizione/descrizione.component';
 import { AjaxResponse } from 'rxjs/ajax';
-
 
 @Component({
   selector: 'add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css'],
   standalone: true,
-  imports: [CommonModule, DescrizioneComponent]
+  imports: [CommonModule],
 })
-
 export class AcquisizioneComponent {
   @Input() view: string = '';
   @Input() archivioAttuale = new Archivio([]);
@@ -45,7 +42,7 @@ export class AcquisizioneComponent {
       posizione.value,
       'undefined'
     );
-    this.archivioAttuale.acquisisciLibro(nuovoLibro);
+    this.archivioAttuale.aggiungiLibro(nuovoLibro);
 
     titolo.value = '';
     autore.value = '';

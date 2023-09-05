@@ -8,11 +8,10 @@ import { ArchivioService } from './archivio.service';
 @Component({
   selector: 'root',
   standalone: true,
-  imports: [CommonModule, InserimentoComponent, RicercaComponent],
+  imports: [CommonModule, addComponent, RicercaComponent],
   templateUrl: './root.component.html',
-  styleUrls: ['./root.component.css']
+  styleUrls: ['./root.component.css'],
 })
-
 export class RootComponent implements OnInit {
   acquisizione: number = 0;
   ricerca: number = 0;
@@ -41,4 +40,3 @@ export class RootComponent implements OnInit {
 
   ngOnInit() {}
 }
-
