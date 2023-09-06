@@ -29,7 +29,7 @@ export class RicercaComponent implements OnInit, OnChanges {
     });
   }
 
-  libroSelezionato: Volume;
+  libroSelezionato: Volume = new Volume('', '', '', '');
   trovati: number;
 
   titolo: string;

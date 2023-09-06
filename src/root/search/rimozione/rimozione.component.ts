@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AjaxResponse } from 'rxjs/ajax';
-import { infolibro } from '../../infolibro';
+import { Volume } from '../../volume';
 import { Archivio } from '../../archivio';
 import { ArchivioService } from '../../archivio.service';
+import { RicercaComponent } from './search/search.component'
+
 
 @Component({
   selector: 'app-rimozione',
@@ -13,7 +15,7 @@ import { ArchivioService } from '../../archivio.service';
   imports: [CommonModule],
 })
 export class RimozioneComponent implements OnInit {
-  @Input() libroSelezionato: infolibro;
+  @Input() libroSelezionato: Volume;
   @Input() archivioAttuale: Archivio = new Archivio(this.ar);
 
   eliminaLibro() {

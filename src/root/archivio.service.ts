@@ -7,7 +7,7 @@ import { ajax, AjaxResponse } from 'rxjs/ajax';
   providedIn: 'any',
 })
 export class ArchivioService {
-  key: string = 'key=cfb29652';
+  key: string = 'key=33f3a114';
   indirizzoGet: string =
     'https://eu-central-1.aws.data.mongodb-api.com/app/kvaas-giwjg/endpoint/get?' +
     this.key;

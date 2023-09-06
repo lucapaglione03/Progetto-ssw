@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AjaxResponse } from 'rxjs/ajax';
-import { infolibro } from '../../infolibro';
+import { Volume } from '../../volume';
 import { Archivio } from '../../archivio';
 import { ArchivioService } from '../../archivio.service';
 
@@ -10,16 +10,20 @@ import { ArchivioService } from '../../archivio.service';
   templateUrl: './prestito.component.html',
   styleUrls: ['./prestito.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
-
 export class PrestitoComponent implements OnInit {
-  @Input() libroSelezionato: infolibro;
-  @Input() archivioAttuale: Archivio = new Archivio(this.ar)
+  @Input() libroSelezionato: Volume;
+  @Input() archivioAttuale: Archivio = new Archivio(this.ar);
 
   prestaLibro() {
-    var nomePrestatario: HTMLInputElement = document.getElementById('prestatario') as HTMLInputElement;
-    this.archivioAttuale.prestitoLibro(this.libroSelezionato, nomePrestatario.value)
+    var nomePrestatario: HTMLInputElement = document.getElementById(
+      'prestatario'
+    ) as HTMLInputElement;
+    this.archivioAttuale.prestitoLibro(
+      this.libroSelezionato,
+      nomePrestatario.value
+    );
   }
 
   restituisciLibro() {
@@ -28,7 +32,5 @@ export class PrestitoComponent implements OnInit {
 
   constructor(private ar: ArchivioService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
