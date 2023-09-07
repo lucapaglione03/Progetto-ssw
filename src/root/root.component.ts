@@ -4,11 +4,12 @@ import { RicercaComponent } from './search/search.component';
 import { AcquisizioneComponent } from './add/add.component';
 import { Archivio } from './archivio';
 import { ArchivioService } from './archivio.service';
+import { AjaxResponse } from 'rxjs/ajax';
 
 @Component({
   selector: 'root',
   standalone: true,
-  imports: [CommonModule, addComponent, RicercaComponent],
+  imports: [CommonModule, AcquisizioneComponent, RicercaComponent],
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.css'],
 })
